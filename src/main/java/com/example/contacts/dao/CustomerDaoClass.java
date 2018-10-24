@@ -72,6 +72,26 @@ public class CustomerDaoClass implements CustomerDao {
         }
     }
     public void importData(List<Customer> list) throws SQLException {
+
+        /*These are commands which I used to create tables in my database. I used MySQL Database.
+
+        String sqlCreateCustomers = "CREATE TABLE CUSTOMERS (\n" +
+                "ID int(11) NOT NULL AUTO_INCREMENT, \n" +
+                "NAME varchar(255) NOT NULL,\n" +
+                "SURNAME varchar(255) NOT NULL, \n" +
+                "AGE int(11),\n" +
+                "PRIMARY KEY (ID)\n" +
+                ")";
+        String sqlCreateContacts = "CREATE TABLE CONTACTS (\n" +
+                "ID int(11) NOT NULL AUTO_INCREMENT, \n" +
+                "CUSTOMERID int(11) NOT NULL,\n" +
+                "TYPE int(11) NOT NULL,\n" +
+                "CONTACTNAME varchar(255) NOT NULL,\n" +
+                "PRIMARY KEY (ID),\n" +
+                "FOREIGN KEY (CUSTOMERID) REFERENCES CUSTOMERS(ID)\n" +
+                ")";
+                */
+
         String sql = "INSERT INTO CUSTOMERS(id, name, surname, age) VALUES (:id, :name, :surname, :age)";
         String sql2 = "INSERT INTO CONTACTS(id, customerId, type, contactName) VALUES (:id, :customerId, :type, :contactName) ";
 
